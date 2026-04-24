@@ -2,6 +2,7 @@ import { UserProfile, TopicCategory } from '@/types';
 import Header from './Header';
 import TopicFilterBar from './TopicFilterBar';
 import OpportunityCard from './OpportunityCard';
+import ValidationPulse from './ValidationPulse';
 import BottomNav, { NavItem } from './BottomNav';
 import FloatingActionButton from './FloatingActionButton';
 import { opportunities, personaNames } from '@/data/opportunities';
@@ -35,6 +36,7 @@ export default function OpportunitiesFeed({ userProfile, userName, onQuizRestart
       </div>
       <TopicFilterBar topics={allTopics} activeTopics={visibleTopics} onFilterChange={(t: any) => setVisibleTopics(p => p.includes(t) ? p.filter(x => x !== t) : [...p, t])} />
       <main className="max-w-4xl mx-auto px-4 py-6">
+        <ValidationPulse />
         {filteredOpportunities.length > 0 ? (
           <div>
             <p className="text-sm text-gray-600 mb-4">Found {filteredOpportunities.length} opportunities</p>
