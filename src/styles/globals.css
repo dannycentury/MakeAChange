@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F9F9F7;
+  color: #2C2C2C;
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #2C2C2C;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2C2C2C;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2C2C2C;
+}
+
+p {
+  line-height: 1.625;
+  color: #4A4A4A;
+}
+
+/* Utility Classes */
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: white;
+  background-color: #D4A5A5;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #C08888;
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: #2C2C2C;
+  background-color: #F9F9F7;
+  border: 2px solid #9CAF88;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #B8C9AC;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  background-color: #FAFAF8;
+  color: #2C2C2C;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-colors duration-200;
+  }
+
+  .btn-primary-dusty-rose {
+    @apply btn-primary bg-dusty-rose text-white hover:bg-opacity-90;
+  }
+
+  .btn-primary-sage {
+    @apply btn-primary bg-sage-green text-white hover:bg-opacity-90;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .capsule-button {
+    @apply px-4 py-2 rounded-full font-medium text-xs transition-all duration-200 whitespace-nowrap;
+  }
+}
