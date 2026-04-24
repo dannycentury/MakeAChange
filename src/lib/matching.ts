@@ -105,49 +105,12 @@ export function isPerfectMatch(
 ): boolean {
   return opportunity.role_tags.includes(userPersona);
 }
-import { Opportunity, AdvocacyPersona, Topic } from '../types';
-
-export function matchOpportunities(
-  selectedTopics: Topic[],
-  persona: AdvocacyPersona,
-  opportunities: Opportunity[]
-): Opportunity[] {
-  // Filter opportunities that match topics AND prioritize role match
-  const matched = opportunities.filter((opp) => {
-    const hasMatchingTopic = selectedTopics.some((topic) =>
-      opp.topics.includes(topic)
-    );
-    return hasMatchingTopic;
-  });
-
-  // Sort by role match priority
-  const sorted = matched.sort((a, b) => {
-    const aHasDirectRoleMatch = a.roleTags.includes(persona);
-    const bHasDirectRoleMatch = b.roleTags.includes(persona);
-
-    // Direct role matches come first
-    if (aHasDirectRoleMatch && !bHasDirectRoleMatch) return -1;
-    if (!aHasDirectRoleMatch && bHasDirectRoleMatch) return 1;
-
-    // If both have or don't have direct match, prioritize by how many role tags match
-    const aRoleMatches = a.roleTags.filter(
-      (tag) => tag === persona
-    ).length;
-    const bRoleMatches = b.roleTags.filter(
-      (tag) => tag === persona
-    ).length;
-
-    return bRoleMatches - aRoleMatches;
-  });
-
-  return sorted;
-}
 
 export function getPersonaName(persona: AdvocacyPersona): string {
   const names: Record<AdvocacyPersona, string> = {
     organizer: 'The Organizer',
     educator: 'The Educator',
-    supporting: 'The Quiet Supporter',
+    supporter: 'The Quiet Supporter',
   };
   return names[persona];
 }

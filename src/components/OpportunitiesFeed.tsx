@@ -7,10 +7,20 @@ import FloatingActionButton from './FloatingActionButton';
 import { opportunities, personaNames } from '@/data/opportunities';
 import { filterOpportunitiesByProfile } from '@/lib/matching';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function OpportunitiesFeed({ userProfile, userName, onQuizRestart }: any) {
+  const router = useRouter();
   const [activeNav, setActiveNav] = useState<NavItem>('home');
   const [visibleTopics, setVisibleTopics] = useState<TopicCategory[]>(userProfile.selectedTopics);
+
+  const handleNavChange = (item: NavItem) => {
+    setActiveNav(item);
+    if (item === 'resources') {
+      router.push('/bridge');
+    }
+    // Add other navigation logic if needed
+  };
 
   const allTopics: TopicCategory[] = Array.from(new Set(opportunities.flatMap((opp: any) => opp.topics))).sort();
   const matchedOpportunities = filterOpportunitiesByProfile(opportunities, userProfile);
@@ -39,7 +49,7 @@ export default function OpportunitiesFeed({ userProfile, userName, onQuizRestart
           </div>
         )}
       </main>
-      <BottomNav active={activeNav} onNavChange={setActiveNav} />
+      <BottomNav active={activeNav} onNavChange={handleNavChange} />
       <FloatingActionButton onClick={onQuizRestart} />
     </div>
   );

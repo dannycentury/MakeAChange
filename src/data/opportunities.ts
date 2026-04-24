@@ -1,4 +1,4 @@
-import { Opportunity } from '@/types';
+import { Opportunity, Resource } from '@/types';
 
 export const opportunities: Opportunity[] = [
   {
@@ -115,6 +115,81 @@ export const opportunities: Opportunity[] = [
   },
 ];
 
+export const resources: Resource[] = [
+  // Campus resources
+  {
+    title: 'Student Government Association Advocacy Grant',
+    description: 'Funding for student-led advocacy projects and events.',
+    type: 'Funding',
+    link: 'https://example.com/sga-grant',
+    category: 'campus',
+  },
+  {
+    title: 'Diversity, Equity, and Inclusion Office',
+    description: 'Support for DEI initiatives and resources for marginalized communities.',
+    type: 'Support',
+    link: 'https://example.com/dei-office',
+    category: 'campus',
+  },
+  {
+    title: 'Campus Meeting Room Booking',
+    description: 'Reserve university spaces for meetings, workshops, and events.',
+    type: 'Space',
+    link: 'https://example.com/booking',
+    category: 'campus',
+  },
+  {
+    title: 'Research Grants for Social Impact',
+    description: 'Funding for research projects focused on social justice and community impact.',
+    type: 'Funding',
+    link: 'https://example.com/research-grants',
+    category: 'campus',
+  },
+  {
+    title: 'Legal Aid Clinic',
+    description: 'Free legal advice and support for students and community members.',
+    type: 'Legal',
+    link: 'https://example.com/legal-aid',
+    category: 'campus',
+  },
+  // Community resources
+  {
+    title: 'New Orleans Workers\' Center',
+    description: 'Grassroots organization supporting workers\' rights and labor justice.',
+    type: 'Grassroots Org',
+    link: 'https://example.com/workers-center',
+    category: 'community',
+  },
+  {
+    title: 'Louisiana Justice Institute',
+    description: 'Advocacy for criminal justice reform and civil rights.',
+    type: 'Non-Profit',
+    link: 'https://example.com/justice-institute',
+    category: 'community',
+  },
+  {
+    title: 'Satsuma Cafe Community Space',
+    description: 'Venue for community meetings, workshops, and activist gatherings.',
+    type: 'Community Space',
+    link: 'https://example.com/satsuma-cafe',
+    category: 'community',
+  },
+  {
+    title: 'New Orleans Food Cooperative',
+    description: 'Community-owned food system promoting local and sustainable agriculture.',
+    type: 'Cooperative',
+    link: 'https://example.com/food-coop',
+    category: 'community',
+  },
+  {
+    title: 'Carmo Community Health Center',
+    description: 'Healthcare access and community health advocacy.',
+    type: 'Health Center',
+    link: 'https://example.com/carmo-health',
+    category: 'community',
+  },
+];
+
 export const topicLabels: Record<string, string> = {
   'EnvironmentalJustice': 'Environmental Justice',
   'HumanRights': 'Human Rights',
@@ -137,3 +212,4 @@ export const personaDescriptions: Record<string, string> = {
   'educator': 'You want to teach/share',
   'supporter': 'You want to help quietly',
 };
+

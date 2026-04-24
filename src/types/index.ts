@@ -38,37 +38,12 @@ export interface MatchedOpportunity extends Opportunity {
   matchingRole: AdvocacyPersona; // Which role matched this opportunity
   matchScore: number; // 0-100 indicating quality of match
 }
-// Types for the MakeYourChange application
 
-export type AdvocacyPersona = 'organizer' | 'educator' | 'supporting';
-export type Topic = 'environmental' | 'politics' | 'human-rights' | 'animal-welfare' | 'education' | 'health' | 'justice' | 'poverty';
-
-export interface UserProfile {
-  id: string;
-  name: string;
-  avatar?: string;
-  selectedTopics: Topic[];
-  persona: AdvocacyPersona;
-  location: string;
-}
-
-export interface Opportunity {
-  id: string;
+// Resource for the bridge feature
+export interface Resource {
   title: string;
-  organization: string;
-  location: string;
-  date: string;
-  time?: string;
-  topics: Topic[];
-  roleTags: AdvocacyPersona[];
   description: string;
-  imageUrl?: string;
-  ctaText: string;
-  ctaUrl: string;
-}
-
-export interface QuizAnswers {
-  topics: Topic[];
-  persona: AdvocacyPersona | null;
-  location: string;
+  type: string;
+  link: string;
+  category: 'campus' | 'community';
 }
