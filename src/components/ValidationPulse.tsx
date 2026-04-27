@@ -21,10 +21,10 @@ export default function ValidationPulse() {
     <section className="card p-6 mb-6">
       <div className="space-y-5">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-dusty-rose-dark">
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-charcoal">
             Pulse Tracker
           </p>
-          <h2 className="mt-3 text-2xl font-semibold text-charcoal">
+          <h2 className="mt-3 text-3xl font-black text-charcoal">
             Student Interest Pulse (24h)
           </h2>
           <p className="mt-2 text-sm text-dark-grey max-w-2xl">
@@ -34,19 +34,19 @@ export default function ValidationPulse() {
 
         <div className="space-y-4">
           {simulatedPulseData.map((item) => (
-            <div key={item.topic} className="rounded-3xl border border-slate-200 bg-slate-50/70 p-4">
+            <div key={item.topic} className="rounded-3xl border-4 border-charcoal bg-muted-yellow p-4">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-sm font-medium text-charcoal">{item.topic}</p>
-                  <p className={`mt-1 text-xs font-semibold ${item.status === 'Trending' ? 'text-dusty-rose-dark' : 'text-dark-grey'}`}>
+                  <p className="text-sm font-bold text-charcoal">{item.topic}</p>
+                  <p className={`mt-1 text-xs font-bold ${item.status === 'Trending' ? 'text-dusty-rose-dark' : 'text-dark-grey'}`}>
                     {item.status}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="relative flex h-4 w-4">
+                  <span className="relative flex h-5 w-5">
                     <span className="pulse-dot absolute inset-0" />
                   </span>
-                  <span className="text-3xl font-semibold text-sage-green">
+                  <span className="text-3xl font-black text-sage-green">
                     {item.active_students}
                   </span>
                 </div>
@@ -58,8 +58,8 @@ export default function ValidationPulse() {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-dusty-rose-light bg-dusty-rose-light/70 p-4">
-          <p className="text-sm font-semibold text-dusty-rose-dark">
+        <div className="rounded-2xl border-4 border-charcoal bg-white p-4">
+          <p className="text-sm font-bold text-charcoal">
             🔥 High Engagement (Local NOLA):
           </p>
           <p className="mt-2 text-sm text-charcoal">

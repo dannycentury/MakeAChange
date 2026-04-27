@@ -14,18 +14,18 @@ export default function BottomNav({ active, onNavChange }: BottomNavProps) {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-lg">
-      <div className="max-w-4xl mx-auto px-4 flex items-center justify-around h-16">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t-4 border-charcoal shadow-hard">
+      <div className="max-w-4xl mx-auto px-4 flex items-center justify-around h-[72px]">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => onNavChange(item.id)}
-            className={`flex flex-col items-center gap-1 px-3 py-2 ${
-              active === item.id ? 'text-sage-green' : 'text-dark-grey'
-            }`}
-          >
-            <span className="text-xl">{item.icon}</span>
-            <span className="text-xs font-medium">{item.label}</span>
+            className={`flex flex-col items-center gap-1 px-4 py-2 rounded-full border-4 border-charcoal ${
+              active === item.id ? 'bg-muted-yellow text-charcoal' : 'bg-white text-dark-grey'
+            } font-bold text-xs`}>
+
+            <span className="text-2xl">{item.icon}</span>
+            <span className="text-[0.72rem] font-bold">{item.label}</span>
           </button>
         ))}
       </div>

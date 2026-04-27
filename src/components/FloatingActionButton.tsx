@@ -7,7 +7,7 @@ export default function FloatingActionButton({ onClick, label = 'Add' }: Floatin
   return (
     <button
       onClick={onClick}
-      className="fixed bottom-20 right-4 w-14 h-14 rounded-full bg-dusty-rose hover:bg-dusty-rose-dark text-white font-bold shadow-lg flex items-center justify-center z-30"
+      className="fixed bottom-20 right-4 w-16 h-16 rounded-full bg-muted-yellow text-charcoal font-black border-4 border-charcoal shadow-hard flex items-center justify-center z-30 hover:translate-x-[-2px] hover:-translate-y-2 transition-transform"
       title={label}
     >
       +
